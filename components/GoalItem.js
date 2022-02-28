@@ -1,9 +1,10 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { TouchableHighlight, TouchableNativeFeedback } from "react-native-web";
 
 const GoalItem = (props) => {
 	return (
-		<TouchableOpacity onPress={props.onDelete}>
+		<TouchableOpacity activeOpacity={0.8} onPress={props.onDelete.bind(this, props.id)}>
 			<View style={styles.listItem}>
 				<Text>{props.text}</Text>
 			</View>
